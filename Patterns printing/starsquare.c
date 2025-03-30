@@ -1,3 +1,5 @@
+// WAP to print star square
+
 #include<stdio.h>
 int main () {
     int n ;
