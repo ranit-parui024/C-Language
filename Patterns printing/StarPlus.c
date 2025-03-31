@@ -1,4 +1,4 @@
-//WAP to print 
+//WAP to print star plus
 
 #include<stdio.h>
 int main () {
@@ -8,9 +8,9 @@ int main () {
 
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= n; j++){
-            if( i==j || (i+j) == (n+1)) {
+            if(i == (n+1)/2 || j == (n+1)/2){
                 printf("* ");
-            }
+            } 
             else {
                 printf("  ");
             }

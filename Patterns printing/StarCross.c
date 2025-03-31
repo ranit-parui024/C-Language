@@ -1,4 +1,4 @@
-//WAP to print 
+//WAP to print star cross
 
 #include<stdio.h>
 int main () {
