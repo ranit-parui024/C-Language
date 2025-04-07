@@ -1,21 +1,16 @@
-//WAP to print 
-
 #include<stdio.h>
-int main () {
-    int n;
-    printf("enter row number n = ");
-    scanf("%d", &n);
+//int fun( int , int ); // it is --> forward diclaration
+                        // prototype of the functions, Name of Funcn - fun
+                      // (int , int ) --> /funcn will take two int as argument
+int fun ( int x, int y) {
+     int z;
+     z = x * y;
+    return z;
+}
 
-    for(int i = 1; i <= n; i++){
-        for(int j = 1; j <= n; j++){
-            if( i==j || (i+j) == (n+1)) {
-                printf("* ");
-            }
-            else {
-                printf("  ");
-            }
-        }
-        printf("\n");
-    }
+int main () {
+    int a =  10, b = 20, c;
+    c = fun( a, b); // calling the function
+    printf("%d", c);
     return 0;
 }
