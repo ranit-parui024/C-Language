@@ -1,15 +1,31 @@
 // star triangle using recursion
 
 #include<stdio.h>
-void dst ( int n ) {
-    if( n > 1 )
-        dst ( n-1 );
-    for( int i = 0; i < n; i++){
-        printf("* ");
-    }
-    printf("\n");
-}
 int main () {
-     dst (5);
+    int n;
+    printf("Enter n = ");
+    scanf("%d", &n);
+    int r;
+    printf("Enter r= ");
+    scanf("%d", &r);
+
+    int nr = n - r;
+
+    int nfact = 1; // n!
+    int rfact = 1; // r!
+    int nrfact = 1; // (n-r)!
+
+    int ncr = nfact/(rfact * nrfact);
+
+    for(int i = 1; i <= n; i++){
+        nfact = nfact*i;
+    }
+    for(int i = 1; i <= r; i++){
+        rfact = rfact*i;
+    }
+    for(int i = 1; i <= nr; i++){
+        nrfact = nrfact*i;
+    }
+    printf("%dC%d = %d", n, r, ncr);
     return 0;
 }
