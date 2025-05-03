@@ -1,31 +1,24 @@
-// star triangle using recursion
-
 #include<stdio.h>
-int main () {
-    int n;
+int factorial(int x){
+    int fact = 1;
+    for(int i = 1; i<=x; i++){
+        fact = fact*i;
+    }
+    return fact;
+}
+int main() {
+    int n, r;
     printf("Enter n = ");
     scanf("%d", &n);
-    int r;
-    printf("Enter r= ");
+    printf("Enter r = ");
     scanf("%d", &r);
 
     int nr = n - r;
+    int nfact = factorial(n);
+    int rfact = factorial(r);
+    int nrfact = factorial(nr);
 
-    int nfact = 1; // n!
-    int rfact = 1; // r!
-    int nrfact = 1; // (n-r)!
-
-    int ncr = nfact/(rfact * nrfact);
-
-    for(int i = 1; i <= n; i++){
-        nfact = nfact*i;
-    }
-    for(int i = 1; i <= r; i++){
-        rfact = rfact*i;
-    }
-    for(int i = 1; i <= nr; i++){
-        nrfact = nrfact*i;
-    }
-    printf("%dC%d = %d", n, r, ncr);
+    int ncr = nfact/(rfact*nrfact);
+    printf("%dC%d = %d",  n, r, ncr);
     return 0;
 }

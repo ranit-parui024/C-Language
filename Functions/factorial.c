@@ -1,33 +1,27 @@
 #include<stdio.h>
-int ncr1 (int n ,int r){
-    int nfact = 1; // n!
-    int rfact = 1; // r!
-    int nrfact = 1; // (n- r)!
 
-    for(int i=2; i<=n; i++){
-        nfact = nfact*i;
+int factorial(int x){
+    int fact = 1;
+    for(int i = 1; i<=x; i++){
+        fact = fact*i;
     }
-    for(int i=2; i<=r; i++){
-        rfact = rfact*i;
-    }
-    int nr = n - r;
-    for(int i=2; i<=nr; i++){
-        nrfact = nrfact*i;
-    }
-
-    int result = nfact/(rfact*nrfact);
-
-    return result;
+    return fact;
 }
 
-int main () {
+int main() {
     int n, r;
     printf("Enter n = ");
     scanf("%d", &n);
     printf("Enter r = ");
     scanf("%d", &r);
 
-    int ncr = ncr1(n, r);
-    printf("%dC%d is = %d", n, r, ncr);
+    int nr = n - r;
+    int nfact = factorial(n);
+    int rfact = factorial(r);
+    int nrfact = factorial(nr);
+
+    int ncr = nfact/(rfact*nrfact);
+    printf("%dC%d = %d",  n, r, ncr);
+    
     return 0;
 }
