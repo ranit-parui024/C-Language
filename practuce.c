@@ -1,39 +1,34 @@
-#include <stdio.h>
+#include<stdio.h>
 
-// Function to calculate factorial
-int factorial(int n) {
-    if (n == 0)
+int fact(int x){
+    if( x == 0)
         return 1;
-    return n * factorial(n - 1);
+    return x*fact(x-1);
 }
 
-// Function to calculate nCr (combinations)
-int combinations(int n, int r) {
-    return factorial(n) / (factorial(r) * factorial(n - r));
+int comb(int x, int y){
+    int nCr = fact(x) / ( fact(y)* fact(x-y) );
+    return nCr;
 }
 
-// Function to print Pascal's triangle
-void printPascalTriangle(int rows) {
-    for (int i = 0; i < rows; i++) {
-        // Print leading spaces
-        for (int space = 1; space <= rows - i; space++) {
+void pascaltriangle(int x) {
+    for(int i = 0; i < x; i++){
+        for(int k = 1; k <= x-i; k++){
             printf("  ");
         }
-        // Print numbers
-        for (int j = 0; j <= i; j++) {
-            printf("%4d", combinations(i, j));
-        }
-        printf("\n");
+    for(int j = 0; j <= i; j++){
+        printf("%4d", comb(i, j));
+    }
+    printf("\n");
     }
 }
 
-int main() {
-    int numRows;
 
-    printf("Enter the number of rows: ");
-    scanf("%d", &numRows);
+int main (){
+    int n;
+    printf("Enter number of rows = ");
+    scanf("%d", &n);
 
-    printPascalTriangle(numRows);
-
+    pascaltriangle (n);
     return 0;
 }
