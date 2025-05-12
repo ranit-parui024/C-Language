@@ -1,3 +1,5 @@
+// swap 2 numbers using pointers
+
 #include<stdio.h>
 
 void swap (int* x , int* y) {

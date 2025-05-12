@@ -1,3 +1,5 @@
+// WAP to find HCF/GCD for two numbers.
+
 #include<stdio.h>
 
 int min (int x, int y){
