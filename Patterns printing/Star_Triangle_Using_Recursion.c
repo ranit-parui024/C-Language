@@ -10,6 +10,6 @@ void dst ( int n ) {
     printf("\n");
 }
 int main () {
-     dst (5);
+     dst (9);
     return 0;
 }

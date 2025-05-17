@@ -1,9 +1,17 @@
 #include<stdio.h>
+
+void decreasing (int x){
+    if ( x == 0 )
+        return ;
+    printf("%d ", x);
+    decreasing ( x - 1 );
+    return ;
+}
+
 int main () {
-    int arr[4] = {2, 5, 6, 7}, product = 1;
-    for(int i = 0; i <= 3; i++){
-        product = product * arr[i];
-    }
-    printf("product of the elements is : %d ", product );
+    int n;
+    printf("Enter n = ");
+    scanf("%d ", &n);
+    decreasing (n);
     return 0;
 }
