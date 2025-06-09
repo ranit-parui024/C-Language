@@ -4,11 +4,11 @@ int main () {
 
     printf("Enter number of terms  = ");
     scanf("%d", &n);
-    printf("fibinacci series : ");
+    printf("fibonacci series : ");
 
     for(i = 0; i <= n; i++){
         if(i <= 1){
-            return 1;
+            next = i;
         }
         else {
             next = first + second;
