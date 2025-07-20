@@ -46,18 +46,30 @@ void print(Node *S)
     }
 }
 
-int count (Node *S){
+int count(Node *S)
+{
     int counter = 0;
-    while(S != NULL){
+    while (S != NULL)
+    {
         counter++;
-        S = S-> next;
+        S = S->next;
     }
     return counter;
+}
+
+void foo(Node *HP)
+{
+    while (HP != NULL)
+    {
+        HP->data += 5;
+        HP = HP->next;
+    }
 }
 
 int main()
 {
     HP = build_123();
+    foo(HP);
     print(HP);
     printf("Number of Nodes : %d\n", count(HP));
     return 0;
