@@ -16,39 +16,39 @@ void linked_list_traversal(struct node *ptr)
     }
 }
 
-struct node *getnode(int x)
+Node *getnode(int x)
 {
-    struct node *ptr;
+    Node *ptr;
     ptr = malloc(sizeof(Node));
     ptr->data = x;
     ptr->next = NULL;
     return ptr;
 }
 
+Node *build_123()
+{
+    Node *temp1, *temp2, *temp3;
+    temp1 = getnode(1);
+    temp2 = getnode(2);
+    temp3 = getnode(3);
+    temp1->next = temp2;
+    temp2->next = temp3;
+    return temp1;
+}
+
+Node *HP;
+void print(Node *S)
+{
+    while (S != NULL)
+    {
+        printf("Element : %d\n", S->data);
+        S = S->next;
+    }
+}
+
 int main()
 {
-    struct node *head;
-    struct node *second;
-    struct node *third;
-
-    // allocate memory for nodes in the linked list in Heap
-    head = malloc(sizeof(Node));
-    second = malloc(sizeof(Node));
-    third = malloc(sizeof(Node));
-
-    // lindked first and second node
-    head->data = 7;
-    head->next = second;
-
-    // lindked second and third node
-    second->data = 11;
-    second->next = third;
-
-    // terminate linked list
-    third->data = 66;
-    third->next = NULL;
-
-    // linkedlist printing
-    linked_list_traversal(head);
+    HP = build_123();
+    print(HP);
     return 0;
 }
