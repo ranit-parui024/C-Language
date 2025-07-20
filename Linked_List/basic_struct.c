@@ -16,6 +16,15 @@ void linked_list_traversal(struct node *ptr)
     }
 }
 
+struct node *getnode(int x)
+{
+    struct node *ptr;
+    ptr = malloc(sizeof(Node));
+    ptr->data = x;
+    ptr->next = NULL;
+    return ptr;
+}
+
 int main()
 {
     struct node *head;
@@ -39,7 +48,7 @@ int main()
     third->data = 66;
     third->next = NULL;
 
-    //linkedlist printing
+    // linkedlist printing
     linked_list_traversal(head);
     return 0;
 }
