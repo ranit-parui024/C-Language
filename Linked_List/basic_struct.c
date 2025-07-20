@@ -7,14 +7,14 @@ typedef struct node
     struct node *next;
 } Node;
 
-void linked_list_traversal(struct node *ptr)
-{
-    while (ptr != NULL)
-    {
-        printf("Element : %d\n", ptr->data);
-        ptr = ptr->next;
-    }
-}
+// void linked_list_traversal(struct node *ptr)
+// {
+//     while (ptr != NULL)
+//     {
+//         printf("Element : %d\n", ptr->data);
+//         ptr = ptr->next;
+//     }
+// }
 
 Node *getnode(int x)
 {
@@ -46,9 +46,19 @@ void print(Node *S)
     }
 }
 
+int count (Node *S){
+    int counter = 0;
+    while(S != NULL){
+        counter++;
+        S = S-> next;
+    }
+    return counter;
+}
+
 int main()
 {
     HP = build_123();
     print(HP);
+    printf("Number of Nodes : %d\n", count(HP));
     return 0;
 }
