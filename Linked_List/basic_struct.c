@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node
+typedef struct node
 {
     int data;
     struct node *next;
-};
+} Node;
 
 void linked_list_traversal(struct node *ptr)
 {
@@ -23,9 +23,9 @@ int main()
     struct node *third;
 
     // allocate memory for nodes in the linked list in Heap
-    head = (struct node *)malloc(sizeof(struct node));
-    second = (struct node *)malloc(sizeof(struct node));
-    third = (struct node *)malloc(sizeof(struct node));
+    head = malloc(sizeof(Node));
+    second = malloc(sizeof(Node));
+    third = malloc(sizeof(Node));
 
     // lindked first and second node
     head->data = 7;
