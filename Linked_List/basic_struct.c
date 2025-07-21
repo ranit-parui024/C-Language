@@ -66,6 +66,28 @@ void foo(Node *HP)
     }
 }
 
+//add node at the begining of list
+void add_begin (Node *S, int x){
+    Node *p = getnode (x);
+    p -> next = S;
+    HP = p;
+}
+
+// add node at the end of list
+void add_end(Node *S, int x){
+    Node *p = getnode(x);
+    if(S){
+        while (S -> next != NULL)
+        {
+            S = S -> next;
+        }
+        S -> next = p;
+    }
+    else {
+        HP = p;
+    }
+}
+
 int main()
 {
     HP = build_123();
