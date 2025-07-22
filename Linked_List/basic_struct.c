@@ -88,6 +88,8 @@ void add_end(Node *S, int x){
     }
 }
 
+
+
 int main()
 {
     HP = build_123();
